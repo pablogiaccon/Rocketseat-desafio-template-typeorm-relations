@@ -37,6 +37,11 @@ class CustomersRepository implements ICustomersRepository {
 
     return findCustomer;
   }
+
+  public async findAll(): Promise<Customer[]> {
+    const customers = await this.ormRepository.find();
+    return customers;
+  }
 }
 
 export default CustomersRepository;
